@@ -1,0 +1,8 @@
+.detail-row {
+    position: relative;
+  }
+  
+  .detail-row.testing {
+    color:#f00;
+  }
+  

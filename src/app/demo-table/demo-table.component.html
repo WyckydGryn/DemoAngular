@@ -1,0 +1,30 @@
+<table>
+    <tr>
+      <th>Column A</th>
+      <th>Column B</th>
+      <th>Column C</th>
+    </tr>
+    
+    <ng-container *ngFor="let dataRow of tableData">
+    <tr class="element-row">
+      <td>{{dataRow.col1}}</td>
+      <td>{{dataRow.col2}}</td>
+      <td>{{dataRow.col3}}</td>
+      <td><button (click) = 'anim()'>Expand??</button></td>
+    </tr>
+    <tr [@detailExpand] = 'state' *ngFor="let detailRow of dataRow.detail" class="detail-row testing">
+      <td colspan="3">
+        <table>
+          <tr>
+            <th>Detail Column AA</th>
+            <th>Detail Column AB</th>
+          </tr>
+          <tr>
+            <td>{{detailRow.detCol1}}</td>
+            <td (click)='anim()' [@detailExpand] = 'state'>{{detailRow.detCol1}}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    </ng-container>
+  </table>
